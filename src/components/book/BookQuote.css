@@ -1,0 +1,59 @@
+/* quote card styling */
+.quote-card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(106, 61, 232, 0.15);
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+    overflow: hidden;
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  .dark-theme .quote-card {
+    background: linear-gradient(135deg, #2d3436, #1e272e);
+  }
+  
+  .quote-card blockquote {
+    position: relative;
+    padding: 2rem;
+    font-style: italic;
+  }
+  
+  .quote-card blockquote p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-block-end: 1rem;
+    font-weight: 500;
+  }
+  
+  .quote-card blockquote p::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: 0.5rem;
+    opacity: 0.3;
+  }
+  
+  .quote-card blockquote p::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    position: absolute;
+    inset-inline-end: 1rem;
+    inset-block-end: 1.5rem;
+    opacity: 0.3;
+  }
+  
+  .quote-card .blockquote-footer {
+    font-weight: 500;
+    text-align: end;
+    padding: 0 2rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .quote-card .blockquote-footer cite {
+    font-style: italic;
+    opacity: 0.8;
+  }

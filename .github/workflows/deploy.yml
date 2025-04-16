@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]  # This workflow will trigger only when you push to the "main" branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest  # Using Ubuntu environment to run the actions
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # This step checks out the code from your repository
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3  # This step ensures Node.js is installed
+        with:
+          node-version: 20  # We're using Node.js version 20 here
+
+      - name: Enable Corepack
+        run: corepack enable  # Enable Corepack to handle Yarn 4.x
+
+      - name: Install Yarn 4
+        run: corepack prepare yarn@4.6.0 --activate  # Install and activate Yarn 4.6.0
+
+      - name: Install dependencies
+        run: yarn  # Use Yarn to install all dependencies listed in package.json
+
+      - name: Build project
+        run: yarn build  # Build the project using Vite, converting it to production-ready files
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # This action publishes the built files to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Ensure the token has the correct permissions
+          publish_dir: ./dist  # This specifies the directory containing the built files for deployment
+          user_name: 'github-actions'  # Optional: you can specify the user name for the commit
+          user_email: 'github-actions@users.noreply.github.com'  # Optional: you can specify the email for the commit

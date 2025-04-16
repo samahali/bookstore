@@ -1,0 +1,70 @@
+/* Product card enhancements */
+.product-card {
+    transition: var(--transition);
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    width: 100%;
+    margin-block-end: 1.5rem;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(106, 61, 232, 0.2);
+  }
+  
+  .card-img-top {
+    height: 320px;
+    object-fit: cover;
+    border-block-end: 3px solid var(--accent-color);
+    transition: var(--transition);
+  }
+  
+  .product-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  .book-language {
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--dark-color);
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+.author-name {
+  color: #666;
+  font-size: 0.95rem;
+  margin-block-end: 1rem;
+}
+.featured-label {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-start: 10px;
+  background-color: var(--success-color);
+  color: white;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Wishlist button */
+.wishlist-btn.btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  color: var(--light-color);
+  border-color: var(--danger-color);
+  transform: translateY(-2px);
+}
+.wishlist-btn.btn-danger:hover {
+  transform: translateY(-2px);
+}
