@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bookstore/booklogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <script type="module" crossorigin src="/bookstore/assets/index-CJvY5jGg.js"></script>
+    <link rel="stylesheet" crossorigin href="/bookstore/assets/index-DGN7yt03.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        // Retrieve the saved theme from localStorage, or default to 'dark' if not found
+        const savedTheme = localStorage.getItem("bookstore-theme") || "dark";
+        
+        if (savedTheme === "dark") {
+          // If it is dark, add the 'dark-theme' class to the body element
+          document.body.classList.add("dark-theme");
+        }
+      })();
+    </script>
+    
+  </body>
+</html>
