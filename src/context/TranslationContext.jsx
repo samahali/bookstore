@@ -41,9 +41,13 @@ export const TranslationProvider = ({ children }) => {
 
   // Toggle language between English and Arabic
   const toggleLanguage = useCallback(() => {
-    setLanguage(language === "en" ? "ar" : "en");
-    const dir = language === "en" ? "rtl" : "ltr"
-    document.querySelector("html").setAttribute("dir", dir)
+    setLanguage((prev) => (prev === "en" ? "ar" : "en"));
+  }, []);
+  
+  // Update HTML dir based on language
+  useEffect(() => {
+    const dir = language === "ar" ? "rtl" : "ltr";
+    document.documentElement.setAttribute("dir", dir);
   }, [language]);
 
   // Basic translation function with support for variables
